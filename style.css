@@ -1,0 +1,297 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background:
+        linear-gradient(180deg, #fff6f8 0%, #ffeef3 100%);
+    color: #3d2b2f;
+    padding: 18px 14px 30px;
+}
+
+/* Overlay do calendário */
+.fp-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.18);
+    z-index: 998;
+    display: none;
+}
+
+.fp-overlay.active {
+    display: block;
+}
+
+/* Layout principal */
+.layout-principal {
+    width: 100%;
+    max-width: 620px;
+    margin: 0 auto;
+}
+
+/* Card principal */
+.card {
+    width: 100%;
+    background: #ffffff;
+    border: 1px solid #ffd6e3;
+    border-radius: 26px;
+    padding: 20px 18px 22px;
+    box-shadow: 0 10px 30px rgba(214, 132, 160, 0.18);
+}
+
+/* Imagem/logo no topo do formulário */
+.logo-formulario {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 14px;
+}
+
+.logo-formulario img {
+    width: 100%;
+    max-width: 420px;
+    height: auto;
+    display: block;
+    border-radius: 18px;
+    border: 3px solid #ffd7e4;
+    box-shadow: 0 8px 18px rgba(221, 149, 175, 0.18);
+}
+
+/* Título */
+.card h2 {
+    margin: 0 0 8px;
+    text-align: center;
+    font-size: 2rem;
+    line-height: 1.1;
+    color: #4a3037;
+}
+
+.subtitle {
+    margin: 0 0 18px;
+    text-align: center;
+    color: #8a6772;
+    font-size: 0.98rem;
+    line-height: 1.4;
+}
+
+/* Grupos */
+.input-group {
+    margin-bottom: 16px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 0.84rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    color: #8b5b6c;
+}
+
+/* Inputs */
+.input-group input[type="text"],
+.input-group input[type="file"],
+.input-group textarea {
+    width: 100%;
+    border: 1.5px solid #f4c8d6;
+    background: #fffafb;
+    color: #433136;
+    border-radius: 16px;
+    padding: 14px 15px;
+    font-size: 1rem;
+    outline: none;
+    transition: 0.2s ease;
+}
+
+.input-group input[type="text"]::placeholder,
+.input-group textarea::placeholder {
+    color: #b08c97;
+}
+
+.input-group input[type="text"]:focus,
+.input-group input[type="file"]:focus,
+.input-group textarea:focus {
+    border-color: #eb8fad;
+    background: #fffdfd;
+    box-shadow: 0 0 0 4px rgba(235, 143, 173, 0.14);
+}
+
+.input-group textarea {
+    min-height: 105px;
+    resize: vertical;
+}
+
+/* File input */
+.input-group input[type="file"] {
+    padding: 10px 12px;
+    background: #fff8fb;
+}
+
+/* Texto pequeno */
+.input-group small {
+    display: block;
+    margin-top: 8px;
+    font-size: 0.87rem;
+    line-height: 1.35;
+    color: #8f6c76;
+}
+
+/* Preview da imagem */
+.preview-box {
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid #f3ced9;
+    background: #fff8fb;
+    border-radius: 16px;
+    padding: 10px;
+}
+
+.preview-box img {
+    width: 74px;
+    height: 74px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 1px solid #f3ced9;
+    background: #fff;
+}
+
+.preview-box span {
+    font-size: 0.92rem;
+    color: #6f5560;
+    word-break: break-word;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Botão WhatsApp */
+.btn-zap {
+    width: 100%;
+    border: none;
+    border-radius: 18px;
+    padding: 16px 18px;
+    margin-top: 6px;
+    font-size: 1.08rem;
+    font-weight: 700;
+    cursor: pointer;
+    color: #ffffff;
+    background: linear-gradient(180deg, #31d266 0%, #20bf58 100%);
+    box-shadow: 0 8px 20px rgba(39, 188, 89, 0.25);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+}
+
+.btn-zap:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 24px rgba(39, 188, 89, 0.28);
+}
+
+.btn-zap:active {
+    transform: translateY(0);
+}
+
+.btn-zap:disabled {
+    opacity: 0.75;
+    cursor: not-allowed;
+}
+
+/* Status */
+.status-envio {
+    min-height: 20px;
+    margin: 12px 2px 0;
+    text-align: center;
+    font-size: 0.92rem;
+    color: #9c6075;
+}
+
+/* Switch de tema
+   Se não quiser mais usar, pode deixar escondido */
+.theme-switch-wrapper {
+    display: none;
+}
+
+/* Calendário flatpickr */
+.flatpickr-calendar {
+    z-index: 9999 !important;
+    border-radius: 18px !important;
+    border: 1px solid #f3c9d7 !important;
+    box-shadow: 0 12px 30px rgba(208, 145, 167, 0.22) !important;
+}
+
+.flatpickr-months {
+    background: #fff8fb !important;
+    border-radius: 18px 18px 0 0 !important;
+}
+
+.flatpickr-current-month,
+.flatpickr-monthDropdown-months,
+.numInputWrapper input,
+.flatpickr-weekday,
+.flatpickr-day,
+.flatpickr-time input,
+.flatpickr-am-pm {
+    color: #5a3a45 !important;
+}
+
+.flatpickr-weekdays {
+    background: #fff8fb !important;
+}
+
+.flatpickr-day.selected,
+.flatpickr-day.startRange,
+.flatpickr-day.endRange {
+    background: #eb8fad !important;
+    border-color: #eb8fad !important;
+    color: #fff !important;
+}
+
+.flatpickr-day.today {
+    border-color: #eb8fad !important;
+}
+
+.flatpickr-day:hover {
+    background: #ffe3ec !important;
+    border-color: #ffe3ec !important;
+}
+
+.flatpickr-time .numInputWrapper:hover,
+.flatpickr-time input:hover {
+    background: #fff4f8 !important;
+}
+
+.flatpickr-monthDropdown-months {
+    background: #fff !important;
+}
+
+.flatpickr-monthDropdown-months option {
+    background: #fff !important;
+    color: #5a3a45 !important;
+}
+
+@media (min-width: 768px) {
+    body {
+        padding: 26px 20px 36px;
+    }
+
+    .card {
+        padding: 24px 24px 26px;
+    }
+
+    .logo-formulario img {
+        max-width: 500px;
+    }
+
+    .card h2 {
+        font-size: 2.2rem;
+    }
+}

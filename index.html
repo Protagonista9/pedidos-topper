@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedido de Topper</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="style.css?v=3">
+</head>
+
+<body data-theme="dark">
+
+<div id="calendar-overlay" class="fp-overlay" onclick="fecharCalendario()"></div>
+
+<div class="theme-switch-wrapper">
+    <div class="theme-switch" onclick="toggleTheme()">
+        <div class="theme-icons">
+            <span>☀</span>
+            <span>☾</span>
+        </div>
+        <div class="switch-handle">
+            <span id="active-icon">☾</span>
+        </div>
+    </div>
+</div>
+
+<div class="layout-principal">
+
+    <div class="card">
+
+        <div class="logo-formulario">
+            <img src="lateral.png" alt="Divulgação da loja">
+        </div>
+
+        <h2>Pedido de Topper</h2>
+        <p class="subtitle">Preencha os dados e anexe a imagem de referência.</p>
+
+        <div class="input-group">
+            <label>Nome de quem pediu *</label>
+            <input 
+                type="text" 
+                id="nomeCliente" 
+                maxlength="40" 
+                placeholder="Ex: Maria Silva"
+                required
+            >
+        </div>
+
+        <div class="input-group">
+            <label>Nome que vai no topper</label>
+            <input 
+                type="text" 
+                id="nomeTopper" 
+                maxlength="30" 
+                placeholder="Ex: Maitê"
+            >
+        </div>
+
+        <div class="input-group">
+            <label>Idade</label>
+            <input 
+                type="text" 
+                id="idade" 
+                inputmode="numeric" 
+                maxlength="3" 
+                placeholder="Ex: 5"
+            >
+        </div>
+
+        <div class="input-group">
+            <label>Data e hora de entrega *</label>
+            <input 
+                type="text" 
+                id="data_entrega" 
+                placeholder="Selecionar data e hora..." 
+                readonly
+            >
+        </div>
+
+        <div class="input-group">
+            <label>Imagem de referência *</label>
+            <input 
+                type="file" 
+                id="imagem_referencia" 
+                accept="image/*"
+            >
+
+            <div id="preview-box" class="preview-box hidden">
+                <img id="preview-img" alt="Prévia da imagem de referência">
+                <span id="preview-name"></span>
+            </div>
+
+            <small>A imagem será salva no seu Google Drive junto com o pedido.</small>
+        </div>
+
+        <div class="input-group">
+            <label>Observações</label>
+            <textarea 
+                id="observacoes" 
+                placeholder="Ex: quero com azul, contorno preto, igual à imagem..."
+            ></textarea>
+        </div>
+
+        <button id="btn-enviar" class="btn-zap" onclick="enviarPedido()">
+            Enviar pedido pelo WhatsApp
+        </button>
+
+        <p id="status-envio" class="status-envio"></p>
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/pt.js"></script>
+<script src="config.js?v=5"></script>
+<script src="calendario.js?v=5"></script>
+<script src="misc.js?v=5"></script>
+<script src="pedido.js?v=5"></script>
+
+</body>
+</html>
