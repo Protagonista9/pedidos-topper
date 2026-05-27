@@ -264,6 +264,13 @@ body {
     border-color: #ffe3ec !important;
 }
 
+.flatpickr-day.prevMonthDay,
+.flatpickr-day.nextMonthDay,
+.flatpickr-day.flatpickr-disabled {
+    color: #d8a3b4 !important;
+    opacity: 0.45 !important;
+}
+
 .flatpickr-time .numInputWrapper:hover,
 .flatpickr-time input:hover {
     background: #fff4f8 !important;
