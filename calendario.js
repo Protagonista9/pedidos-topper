@@ -115,7 +115,7 @@ function initFlatpickr() {
         time_24hr: true,
         minuteIncrement: 10,
         position: 'auto center',
-        disableMobile: false,
+        disableMobile: true,
 
         onReady: function(selectedDates, dateStr, instance) {
             bloquearDigitacaoAno(instance);
