@@ -30,7 +30,7 @@
     <div class="card">
 
         <div class="logo-formulario">
-            <img src="lateral.png" alt="Divulgação da loja">
+            <img src="img/lateral.png" alt="Divulgação da loja">
         </div>
 
         <h2>Pedido de Topper</h2>
@@ -62,9 +62,9 @@
             <input 
                 type="text" 
                 id="idade" 
-                inputmode="numeric" 
-                maxlength="3" 
-                placeholder="Ex: 5"
+                maxlength="15" 
+                placeholder="Ex: 5 anos,5 ou 5 meses"
+                oninput="limitarIdade(this)"
             >
         </div>
 
